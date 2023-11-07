@@ -1,0 +1,116 @@
+body {
+  background-image: url("https://img.freepik.com/free-photo/abstract-background-light-gray-wallpaper-image_53876-108340.jpg?w=996&t=st=1699164291~exp=1699164891~hmac=816b4ea011a46be5639c1a92f72ded5ab7e9008019bda1424559ea622e8edbb8");
+  font-family: Arial;
+}
+
+.nav {
+  background-color: #555555;
+  height: 10%;
+
+}
+
+.nav input {
+  margin-left: 29.25%;
+  height: 3%;
+  width: 40%;
+  margin-top: 0.2%;
+}
+
+.loop {
+  margin-top: 0.2%;
+  width: 1.5%;
+}
+
+label {
+  display: flex;
+}
+
+h1 {
+  text-align: center;
+}
+
+.menu {
+  display: flex;
+  margin: 4%;
+  font-size: 140%;
+}
+
+.menu-item {
+  margin: auto;
+}
+
+.topic {
+  display: flex;
+  height: 300px;
+}
+
+.item, .r-item {
+  padding: 1%;
+  margin: 1%;
+  border: thin solid black;
+
+}
+
+.item {
+  width: 65%;
+}
+
+.item > h6 {
+  margin: 0 2%;
+  text-align: center;
+}
+
+.item > p {
+  text-align: justify-all;
+}
+
+
+.r-item {
+  width: 30%;
+}
+
+.r-item > div {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.text, p, h6 {
+  word-wrap: break-word;
+  margin: 2%;
+  font-size: 100%;
+}
+
+
+img {
+  width: 100%;
+  height: 45%;}
+
+.r-item img {
+  width: 60%;
+}
+
+hr {
+  width: 100%;
+  height: 2px;
+  color: black;
+}
+
+footer > span {
+  float: right;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.end {
+  text-align: right;
+}
+.end  a{
+  background-color: #b3d4fc;
+  padding: 1%;
+  border-radius: 5px;
+
+}

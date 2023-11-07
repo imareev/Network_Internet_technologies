@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>Сводная таблица</h1>
+<a href="./best.html"><h3>Тройка лидеров рынка процессоров на октябрь 2023</h3></a>
+<a href="./LW3_43.html"><h3>Главная страница</h3></a>
+<details>
+  <summary>
+    Фильтр
+  </summary>
+  <form>
+    <label>кол-во ядер
+      <input type="radio">1
+      <input type="radio">2
+      <input type="radio">3
+      <input type="radio">4
+      <input type="radio">5
+      <input type="radio">6
+    </label>
+    <br>
+    <label>Базовая частота<input type="range" min="200" max="20000"></label>
+    <br>
+    <br>
+    <label>Кэш L1, КБ<input type="range" min="200" max="20000"></label>
+    <br>
+    <br>
+    <label>Кэш L2, КБ<input type="range" min="200" max="20000"></label>
+    <br>
+    <br>
+    <label>Кэш L3, КБ<input type="range" min="200" max="20000"></label>
+    <br>
+    <br>
+    <label>Поддержка инструкций и технологий <input type="text"></label>
+    <br>
+    <br>
+    <label>Поддержка инструкций и технологий<input type="text"> от <input type="text"> до <input type="text"></label>
+
+  </form>
+</details>
+<details>
+  <summary>
+    График
+  </summary>
+  <table>
+    <tr>
+      <td>
+        <h4>Значение по Ox</h4>
+        <p><input type="radio">год выпуска</p>
+        <p><input type="radio">Базовая частота</p>
+        <p><input type="radio">Количество потоков</p>
+      </td>
+      <td>
+        <h4>Значение по Oy</h4>
+        <p><input type="checkbox">Кэш L1, КБ</p>
+        <p><input type="checkbox">Макс. температура</p>
+        <p><input type="checkbox">Базовая частота</p>
+      </td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    Сортировка
+  </summary>
+  <p>Первый уровень сортировки</p>
+  <form id="sorting-form">
+    <label for="sort-by">Сортировать по:</label>
+    <select id="sort-by">
+      <option value="year">Год выхода</option>
+      <option value="processor-type">Тип процессора</option>
+      <option value="cores">Количество ядер</option>
+      <option value="base-frequency">Базовая частота</option>
+      <option value="cache-l1">Кэш L1, КБ</option>
+      <!-- Добавьте другие параметры сортировки по необходимости -->
+    </select>
+
+    <label for="sort-order">Порядок сортировки:</label>
+    <select>
+      <option value="asc">По возрастанию</option>
+      <option value="desc">По убыванию</option>
+    </select>
+  </form>
+  <p>Второй уровень сортировки</p>
+  <form>
+    <label for="sort-by">Сортировать по:</label>
+    <select>
+      <option value="year">Год выхода</option>
+      <option value="processor-type">Тип процессора</option>
+      <option value="cores">Количество ядер</option>
+      <option value="base-frequency">Базовая частота</option>
+      <option value="cache-l1">Кэш L1, КБ</option>
+      <!-- Добавьте другие параметры сортировки по необходимости -->
+    </select>
+
+    <label for="sort-order">Порядок сортировки:</label>
+    <select>
+      <option value="asc">По возрастанию</option>
+      <option value="desc">По убыванию</option>
+    </select>
+  </form>
+  <p>Третий уровень сортировки</p>
+  <form>
+    <label for="sort-by">Сортировать по:</label>
+    <select>
+      <option value="year">Год выхода</option>
+      <option value="processor-type">Тип процессора</option>
+      <option value="cores">Количество ядер</option>
+      <option value="base-frequency">Базовая частота</option>
+      <option value="cache-l1">Кэш L1, КБ</option>
+      <!-- Добавьте другие параметры сортировки по необходимости -->
+    </select>
+
+    <label for="sort-order">Порядок сортировки:</label>
+    <select id="sort-order">
+      <option value="asc">По возрастанию</option>
+      <option value="desc">По убыванию</option>
+    </select>
+    <br><br>
+    <button type="button" id="sort-button">Сортировать</button>
+  </form>
+</details>
+
+<table border="1px">
+  <tbody>
+
+  <tr>
+    <td></td>
+    <td>Год выхода</td>
+    <td>Тип процессора</td>
+    <td>Socket</td>
+    <td>Количество ядер</td>
+    <td>Количество потоков</td>
+    <td>Базовая частота</td>
+    <td>Авторазгон</td>
+    <td>Кэш L1, КБ</td>
+    <td>Кэш L2, КБ</td>
+    <td>Кэш L3, КБ</td>
+    <td>Ядро</td>
+    <td>Техпроцесс</td>
+    <td>Транзисторов, млн</td>
+    <td>TDP</td>
+    <td>Макс. температура</td>
+    <td>Шина</td>
+    <td>Встроенная графика</td>
+    <td>Контроллер памяти</td>
+    <td>Контроллер PCIe</td>
+    <td>Поддержка инструкций и технологий</td>
+  </tr>
+  <tr>
+    <td><br>Atom 230</td>
+    <td>2008</td>
+    <td>Десктопный</td>
+    <td>BGA437</td>
+    <td>1</td>
+    <td>2</td>
+    <td>1600</td>
+    <td>нет</td>
+    <td>32+24</td>
+    <td>512</td>
+    <td>нет</td>
+    <td>Diamondville</td>
+    <td>45</td>
+    <td>47</td>
+    <td>4 </td>
+    <td>85,2</td>
+    <td>533 FSB</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• SSE<br>• SSE2<br>• SSE3<br>• SSSE3<br>• EM64T<br>• NX<br>• Hyper-Threading<br></td>
+  </tr>
+  <tr>
+    <td><br>Atom N270</td>
+    <td>2008</td>
+    <td>Мобильный</td>
+    <td>BGA437</td>
+    <td>1</td>
+    <td>2</td>
+    <td>1600</td>
+    <td>нет</td>
+    <td>32+24</td>
+    <td>512</td>
+    <td>нет</td>
+    <td>Diamondville</td>
+    <td>45</td>
+    <td>47</td>
+    <td>2.5 </td>
+    <td>90</td>
+    <td>667 FSB</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• SSE<br>• SSE2<br>• SSE3<br>• SSSE3<br>• NX<br>• Hyper-Threading<br>• Enhanced SpeedStep tech.<br>•
+      Stop Grant state<br>• Extended Stop Grant State<br>• Sleep state<br>• Deep Sleep state<br>• Deeper Sleep state<br>•
+      Enhanced Deeper Sleep state<br></td>
+  </tr>
+  <tr>
+    <td><br>Athlon 1100</td>
+    <td>2000</td>
+    <td>Десктопный</td>
+    <td>Socket 462</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1100</td>
+    <td>нет</td>
+    <td>128</td>
+    <td>256</td>
+    <td>нет</td>
+    <td>Thunderbird</td>
+    <td>180</td>
+    <td>37</td>
+    <td>60 </td>
+    <td>95</td>
+    <td>200</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• 3DNow!<br>• Halt mode<br>• Stop Grant mode<br>• Probe state<br>• Sleep state<br></td>
+  </tr>
+  <tr>
+    <td><br>Athlon 1333</td>
+    <td>2001</td>
+    <td>Десктопный</td>
+    <td>Socket 462</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1333</td>
+    <td>нет</td>
+    <td>128</td>
+    <td>256</td>
+    <td>нет</td>
+    <td>Thunderbird</td>
+    <td>180</td>
+    <td>37</td>
+    <td>70 </td>
+    <td>95</td>
+    <td>200</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• 3DNow!<br>• Halt mode<br>• Stop Grant mode<br>• Probe state<br>• Sleep state<br></td>
+  </tr>
+  <tr>
+    <td><br>Core 2 Extreme QX6700</td>
+    <td>2006</td>
+    <td>Десктопный</td>
+    <td>LGA775</td>
+    <td>4</td>
+    <td>4</td>
+    <td>2666</td>
+    <td>нет</td>
+    <td>32x4</td>
+    <td>8192</td>
+    <td>нет</td>
+    <td>Kentsfield-XE</td>
+    <td>65</td>
+    <td>582</td>
+    <td>130 </td>
+    <td>64,5</td>
+    <td>1066 FSB</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• SSE<br>• SSE2<br>• SSE3<br>• SSSE3<br>• EM64T<br>• NX<br>• VT-x<br>• Enhanced SpeedStep tech.<br>•
+      Stop Grant state<br>• HALT state<br>• Extended HALT state<br></td>
+  </tr>
+  <tr>
+    <td><br>Ryzen 5 3500</td>
+    <td>2019</td>
+    <td>Десктопный</td>
+    <td>Socket AM4</td>
+    <td>6</td>
+    <td>6</td>
+    <td>3600</td>
+    <td>до 4100</td>
+    <td>6x32 + 6x32</td>
+    <td>6x512</td>
+    <td>16384</td>
+    <td>Matisse</td>
+    <td>7</td>
+    <td>4800</td>
+    <td>65 </td>
+    <td></td>
+    <td></td>
+    <td>нет</td>
+    <td>2-канальный<br>(DDR4-3200)</td>
+    <td>PCI Express 4.0<br>(16 линий)</td>
+    <td>• MMX<br>• SSE<br>• SSE2<br>• SSE3<br>• SSSE3<br>• SSE4<br>• SSE4A<br>• AES<br>• AVX<br>• AVX 2<br>• BMI1<br>•
+      F16C<br>• FMA3<br>• AMD64<br>• EVP<br>• AMD-V<br>• SMAP<br>• SMEP<br>• Precision Boost 2<br></td>
+  </tr>
+  </tr>
+  <tr>
+    <td><br>Atom 230</td>
+    <td>2008</td>
+    <td>Десктопный</td>
+    <td>BGA437</td>
+    <td>1</td>
+    <td>2</td>
+    <td>1600</td>
+    <td>нет</td>
+    <td>32+24</td>
+    <td>512</td>
+    <td>нет</td>
+    <td>Diamondville</td>
+    <td>45</td>
+    <td>47</td>
+    <td>4 </td>
+    <td>85,2</td>
+    <td>533 FSB</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• SSE<br>• SSE2<br>• SSE3<br>• SSSE3<br>• EM64T<br>• NX<br>• Hyper-Threading<br></td>
+  </tr>
+  <tr>
+    <td><br>Atom N270</td>
+    <td>2008</td>
+    <td>Мобильный</td>
+    <td>BGA437</td>
+    <td>1</td>
+    <td>2</td>
+    <td>1600</td>
+    <td>нет</td>
+    <td>32+24</td>
+    <td>512</td>
+    <td>нет</td>
+    <td>Diamondville</td>
+    <td>45</td>
+    <td>47</td>
+    <td>2.5 </td>
+    <td>90</td>
+    <td>667 FSB</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• SSE<br>• SSE2<br>• SSE3<br>• SSSE3<br>• NX<br>• Hyper-Threading<br>• Enhanced SpeedStep tech.<br>•
+      Stop Grant state<br>• Extended Stop Grant State<br>• Sleep state<br>• Deep Sleep state<br>• Deeper Sleep state<br>•
+      Enhanced Deeper Sleep state<br></td>
+  </tr>
+  <tr>
+    <td><br>Athlon 1100</td>
+    <td>2000</td>
+    <td>Десктопный</td>
+    <td>Socket 462</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1100</td>
+    <td>нет</td>
+    <td>128</td>
+    <td>256</td>
+    <td>нет</td>
+    <td>Thunderbird</td>
+    <td>180</td>
+    <td>37</td>
+    <td>60 </td>
+    <td>95</td>
+    <td>200</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• 3DNow!<br>• Halt mode<br>• Stop Grant mode<br>• Probe state<br>• Sleep state<br></td>
+  </tr>
+  <tr>
+    <td><br>Athlon 1333</td>
+    <td>2001</td>
+    <td>Десктопный</td>
+    <td>Socket 462</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1333</td>
+    <td>нет</td>
+    <td>128</td>
+    <td>256</td>
+    <td>нет</td>
+    <td>Thunderbird</td>
+    <td>180</td>
+    <td>37</td>
+    <td>70 </td>
+    <td>95</td>
+    <td>200</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• 3DNow!<br>• Halt mode<br>• Stop Grant mode<br>• Probe state<br>• Sleep state<br></td>
+  </tr>
+  <tr>
+    <td><br>Core 2 Extreme QX6700</td>
+    <td>2006</td>
+    <td>Десктопный</td>
+    <td>LGA775</td>
+    <td>4</td>
+    <td>4</td>
+    <td>2666</td>
+    <td>нет</td>
+    <td>32x4</td>
+    <td>8192</td>
+    <td>нет</td>
+    <td>Kentsfield-XE</td>
+    <td>65</td>
+    <td>582</td>
+    <td>130 </td>
+    <td>64,5</td>
+    <td>1066 FSB</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• SSE<br>• SSE2<br>• SSE3<br>• SSSE3<br>• EM64T<br>• NX<br>• VT-x<br>• Enhanced SpeedStep tech.<br>•
+      Stop Grant state<br>• HALT state<br>• Extended HALT state<br></td>
+  </tr>
+  <tr>
+    <td><br>Ryzen 5 3500</td>
+    <td>2019</td>
+    <td>Десктопный</td>
+    <td>Socket AM4</td>
+    <td>6</td>
+    <td>6</td>
+    <td>3600</td>
+    <td>до 4100</td>
+    <td>6x32 + 6x32</td>
+    <td>6x512</td>
+    <td>16384</td>
+    <td>Matisse</td>
+    <td>7</td>
+    <td>4800</td>
+    <td>65 </td>
+    <td></td>
+    <td></td>
+    <td>нет</td>
+    <td>2-канальный<br>(DDR4-3200)</td>
+    <td>PCI Express 4.0<br>(16 линий)</td>
+    <td>• MMX<br>• SSE<br>• SSE2<br>• SSE3<br>• SSSE3<br>• SSE4<br>• SSE4A<br>• AES<br>• AVX<br>• AVX 2<br>• BMI1<br>•
+      F16C<br>• FMA3<br>• AMD64<br>• EVP<br>• AMD-V<br>• SMAP<br>• SMEP<br>• Precision Boost 2<br></td>
+  </tr>
+  </tr>
+  <tr>
+    <td><br>Atom 230</td>
+    <td>2008</td>
+    <td>Десктопный</td>
+    <td>BGA437</td>
+    <td>1</td>
+    <td>2</td>
+    <td>1600</td>
+    <td>нет</td>
+    <td>32+24</td>
+    <td>512</td>
+    <td>нет</td>
+    <td>Diamondville</td>
+    <td>45</td>
+    <td>47</td>
+    <td>4 </td>
+    <td>85,2</td>
+    <td>533 FSB</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• SSE<br>• SSE2<br>• SSE3<br>• SSSE3<br>• EM64T<br>• NX<br>• Hyper-Threading<br></td>
+  </tr>
+  <tr>
+    <td><br>Atom N270</td>
+    <td>2008</td>
+    <td>Мобильный</td>
+    <td>BGA437</td>
+    <td>1</td>
+    <td>2</td>
+    <td>1600</td>
+    <td>нет</td>
+    <td>32+24</td>
+    <td>512</td>
+    <td>нет</td>
+    <td>Diamondville</td>
+    <td>45</td>
+    <td>47</td>
+    <td>2.5 </td>
+    <td>90</td>
+    <td>667 FSB</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• SSE<br>• SSE2<br>• SSE3<br>• SSSE3<br>• NX<br>• Hyper-Threading<br>• Enhanced SpeedStep tech.<br>•
+      Stop Grant state<br>• Extended Stop Grant State<br>• Sleep state<br>• Deep Sleep state<br>• Deeper Sleep state<br>•
+      Enhanced Deeper Sleep state<br></td>
+  </tr>
+  <tr>
+    <td><br>Athlon 1100</td>
+    <td>2000</td>
+    <td>Десктопный</td>
+    <td>Socket 462</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1100</td>
+    <td>нет</td>
+    <td>128</td>
+    <td>256</td>
+    <td>нет</td>
+    <td>Thunderbird</td>
+    <td>180</td>
+    <td>37</td>
+    <td>60 </td>
+    <td>95</td>
+    <td>200</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• 3DNow!<br>• Halt mode<br>• Stop Grant mode<br>• Probe state<br>• Sleep state<br></td>
+  </tr>
+  <tr>
+    <td><br>Athlon 1333</td>
+    <td>2001</td>
+    <td>Десктопный</td>
+    <td>Socket 462</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1333</td>
+    <td>нет</td>
+    <td>128</td>
+    <td>256</td>
+    <td>нет</td>
+    <td>Thunderbird</td>
+    <td>180</td>
+    <td>37</td>
+    <td>70 </td>
+    <td>95</td>
+    <td>200</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• 3DNow!<br>• Halt mode<br>• Stop Grant mode<br>• Probe state<br>• Sleep state<br></td>
+  </tr>
+  <tr>
+    <td><br>Core 2 Extreme QX6700</td>
+    <td>2006</td>
+    <td>Десктопный</td>
+    <td>LGA775</td>
+    <td>4</td>
+    <td>4</td>
+    <td>2666</td>
+    <td>нет</td>
+    <td>32x4</td>
+    <td>8192</td>
+    <td>нет</td>
+    <td>Kentsfield-XE</td>
+    <td>65</td>
+    <td>582</td>
+    <td>130 </td>
+    <td>64,5</td>
+    <td>1066 FSB</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• SSE<br>• SSE2<br>• SSE3<br>• SSSE3<br>• EM64T<br>• NX<br>• VT-x<br>• Enhanced SpeedStep tech.<br>•
+      Stop Grant state<br>• HALT state<br>• Extended HALT state<br></td>
+  </tr>
+  <tr>
+    <td><br>Ryzen 5 3500</td>
+    <td>2019</td>
+    <td>Десктопный</td>
+    <td>Socket AM4</td>
+    <td>6</td>
+    <td>6</td>
+    <td>3600</td>
+    <td>до 4100</td>
+    <td>6x32 + 6x32</td>
+    <td>6x512</td>
+    <td>16384</td>
+    <td>Matisse</td>
+    <td>7</td>
+    <td>4800</td>
+    <td>65 </td>
+    <td></td>
+    <td></td>
+    <td>нет</td>
+    <td>2-канальный<br>(DDR4-3200)</td>
+    <td>PCI Express 4.0<br>(16 линий)</td>
+    <td>• MMX<br>• SSE<br>• SSE2<br>• SSE3<br>• SSSE3<br>• SSE4<br>• SSE4A<br>• AES<br>• AVX<br>• AVX 2<br>• BMI1<br>•
+      F16C<br>• FMA3<br>• AMD64<br>• EVP<br>• AMD-V<br>• SMAP<br>• SMEP<br>• Precision Boost 2<br></td>
+  </tr>
+  </tr>
+  <tr>
+    <td><br>Atom 230</td>
+    <td>2008</td>
+    <td>Десктопный</td>
+    <td>BGA437</td>
+    <td>1</td>
+    <td>2</td>
+    <td>1600</td>
+    <td>нет</td>
+    <td>32+24</td>
+    <td>512</td>
+    <td>нет</td>
+    <td>Diamondville</td>
+    <td>45</td>
+    <td>47</td>
+    <td>4 </td>
+    <td>85,2</td>
+    <td>533 FSB</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• SSE<br>• SSE2<br>• SSE3<br>• SSSE3<br>• EM64T<br>• NX<br>• Hyper-Threading<br></td>
+  </tr>
+  <tr>
+    <td><br>Atom N270</td>
+    <td>2008</td>
+    <td>Мобильный</td>
+    <td>BGA437</td>
+    <td>1</td>
+    <td>2</td>
+    <td>1600</td>
+    <td>нет</td>
+    <td>32+24</td>
+    <td>512</td>
+    <td>нет</td>
+    <td>Diamondville</td>
+    <td>45</td>
+    <td>47</td>
+    <td>2.5 </td>
+    <td>90</td>
+    <td>667 FSB</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• SSE<br>• SSE2<br>• SSE3<br>• SSSE3<br>• NX<br>• Hyper-Threading<br>• Enhanced SpeedStep tech.<br>•
+      Stop Grant state<br>• Extended Stop Grant State<br>• Sleep state<br>• Deep Sleep state<br>• Deeper Sleep state<br>•
+      Enhanced Deeper Sleep state<br></td>
+  </tr>
+  <tr>
+    <td><br>Athlon 1100</td>
+    <td>2000</td>
+    <td>Десктопный</td>
+    <td>Socket 462</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1100</td>
+    <td>нет</td>
+    <td>128</td>
+    <td>256</td>
+    <td>нет</td>
+    <td>Thunderbird</td>
+    <td>180</td>
+    <td>37</td>
+    <td>60 </td>
+    <td>95</td>
+    <td>200</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• 3DNow!<br>• Halt mode<br>• Stop Grant mode<br>• Probe state<br>• Sleep state<br></td>
+  </tr>
+  <tr>
+    <td><br>Athlon 1333</td>
+    <td>2001</td>
+    <td>Десктопный</td>
+    <td>Socket 462</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1333</td>
+    <td>нет</td>
+    <td>128</td>
+    <td>256</td>
+    <td>нет</td>
+    <td>Thunderbird</td>
+    <td>180</td>
+    <td>37</td>
+    <td>70 </td>
+    <td>95</td>
+    <td>200</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• 3DNow!<br>• Halt mode<br>• Stop Grant mode<br>• Probe state<br>• Sleep state<br></td>
+  </tr>
+  <tr>
+    <td><br>Core 2 Extreme QX6700</td>
+    <td>2006</td>
+    <td>Десктопный</td>
+    <td>LGA775</td>
+    <td>4</td>
+    <td>4</td>
+    <td>2666</td>
+    <td>нет</td>
+    <td>32x4</td>
+    <td>8192</td>
+    <td>нет</td>
+    <td>Kentsfield-XE</td>
+    <td>65</td>
+    <td>582</td>
+    <td>130 </td>
+    <td>64,5</td>
+    <td>1066 FSB</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• SSE<br>• SSE2<br>• SSE3<br>• SSSE3<br>• EM64T<br>• NX<br>• VT-x<br>• Enhanced SpeedStep tech.<br>•
+      Stop Grant state<br>• HALT state<br>• Extended HALT state<br></td>
+  </tr>
+  <tr>
+    <td><br>Ryzen 5 3500</td>
+    <td>2019</td>
+    <td>Десктопный</td>
+    <td>Socket AM4</td>
+    <td>6</td>
+    <td>6</td>
+    <td>3600</td>
+    <td>до 4100</td>
+    <td>6x32 + 6x32</td>
+    <td>6x512</td>
+    <td>16384</td>
+    <td>Matisse</td>
+    <td>7</td>
+    <td>4800</td>
+    <td>65 </td>
+    <td></td>
+    <td></td>
+    <td>нет</td>
+    <td>2-канальный<br>(DDR4-3200)</td>
+    <td>PCI Express 4.0<br>(16 линий)</td>
+    <td>• MMX<br>• SSE<br>• SSE2<br>• SSE3<br>• SSSE3<br>• SSE4<br>• SSE4A<br>• AES<br>• AVX<br>• AVX 2<br>• BMI1<br>•
+      F16C<br>• FMA3<br>• AMD64<br>• EVP<br>• AMD-V<br>• SMAP<br>• SMEP<br>• Precision Boost 2<br></td>
+  </tr>
+  </tr>
+  <tr>
+    <td><br>Atom 230</td>
+    <td>2008</td>
+    <td>Десктопный</td>
+    <td>BGA437</td>
+    <td>1</td>
+    <td>2</td>
+    <td>1600</td>
+    <td>нет</td>
+    <td>32+24</td>
+    <td>512</td>
+    <td>нет</td>
+    <td>Diamondville</td>
+    <td>45</td>
+    <td>47</td>
+    <td>4 </td>
+    <td>85,2</td>
+    <td>533 FSB</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• SSE<br>• SSE2<br>• SSE3<br>• SSSE3<br>• EM64T<br>• NX<br>• Hyper-Threading<br></td>
+  </tr>
+  <tr>
+    <td><br>Atom N270</td>
+    <td>2008</td>
+    <td>Мобильный</td>
+    <td>BGA437</td>
+    <td>1</td>
+    <td>2</td>
+    <td>1600</td>
+    <td>нет</td>
+    <td>32+24</td>
+    <td>512</td>
+    <td>нет</td>
+    <td>Diamondville</td>
+    <td>45</td>
+    <td>47</td>
+    <td>2.5 </td>
+    <td>90</td>
+    <td>667 FSB</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• SSE<br>• SSE2<br>• SSE3<br>• SSSE3<br>• NX<br>• Hyper-Threading<br>• Enhanced SpeedStep tech.<br>•
+      Stop Grant state<br>• Extended Stop Grant State<br>• Sleep state<br>• Deep Sleep state<br>• Deeper Sleep state<br>•
+      Enhanced Deeper Sleep state<br></td>
+  </tr>
+  <tr>
+    <td><br>Athlon 1100</td>
+    <td>2000</td>
+    <td>Десктопный</td>
+    <td>Socket 462</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1100</td>
+    <td>нет</td>
+    <td>128</td>
+    <td>256</td>
+    <td>нет</td>
+    <td>Thunderbird</td>
+    <td>180</td>
+    <td>37</td>
+    <td>60 </td>
+    <td>95</td>
+    <td>200</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• 3DNow!<br>• Halt mode<br>• Stop Grant mode<br>• Probe state<br>• Sleep state<br></td>
+  </tr>
+  <tr>
+    <td><br>Athlon 1333</td>
+    <td>2001</td>
+    <td>Десктопный</td>
+    <td>Socket 462</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1333</td>
+    <td>нет</td>
+    <td>128</td>
+    <td>256</td>
+    <td>нет</td>
+    <td>Thunderbird</td>
+    <td>180</td>
+    <td>37</td>
+    <td>70 </td>
+    <td>95</td>
+    <td>200</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• 3DNow!<br>• Halt mode<br>• Stop Grant mode<br>• Probe state<br>• Sleep state<br></td>
+  </tr>
+  <tr>
+    <td><br>Core 2 Extreme QX6700</td>
+    <td>2006</td>
+    <td>Десктопный</td>
+    <td>LGA775</td>
+    <td>4</td>
+    <td>4</td>
+    <td>2666</td>
+    <td>нет</td>
+    <td>32x4</td>
+    <td>8192</td>
+    <td>нет</td>
+    <td>Kentsfield-XE</td>
+    <td>65</td>
+    <td>582</td>
+    <td>130 </td>
+    <td>64,5</td>
+    <td>1066 FSB</td>
+    <td>нет</td>
+    <td>нет<br>(тип ОЗУ зависит от материнской платы)</td>
+    <td>нет<br>(конфигурация PCIe зависит от материнской платы)</td>
+    <td>• MMX<br>• SSE<br>• SSE2<br>• SSE3<br>• SSSE3<br>• EM64T<br>• NX<br>• VT-x<br>• Enhanced SpeedStep tech.<br>•
+      Stop Grant state<br>• HALT state<br>• Extended HALT state<br></td>
+  </tr>
+  <tr>
+    <td><br>Ryzen 5 3500</td>
+    <td>2019</td>
+    <td>Десктопный</td>
+    <td>Socket AM4</td>
+    <td>6</td>
+    <td>6</td>
+    <td>3600</td>
+    <td>до 4100</td>
+    <td>6x32 + 6x32</td>
+    <td>6x512</td>
+    <td>16384</td>
+    <td>Matisse</td>
+    <td>7</td>
+    <td>4800</td>
+    <td>65 </td>
+    <td></td>
+    <td></td>
+    <td>нет</td>
+    <td>2-канальный<br>(DDR4-3200)</td>
+    <td>PCI Express 4.0<br>(16 линий)</td>
+    <td>• MMX<br>• SSE<br>• SSE2<br>• SSE3<br>• SSSE3<br>• SSE4<br>• SSE4A<br>• AES<br>• AVX<br>• AVX 2<br>• BMI1<br>•
+      F16C<br>• FMA3<br>• AMD64<br>• EVP<br>• AMD-V<br>• SMAP<br>• SMEP<br>• Precision Boost 2<br></td>
+  </tr>
+
+  </tbody>
+</table>
+</body>
+</html>

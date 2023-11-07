@@ -1,0 +1,28 @@
+.content{
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: auto;
+  background-color: green;
+}
+.item {
+  height: 30%;
+  /*width: 10%;*/
+  margin: 2%;
+
+}
+.title {
+  margin: 50% auto;
+  padding-bottom: 2px;
+  padding-right: 2%;
+  margin:0;
+  background-color: white;
+  font-weight: bold;
+
+}
+.text {
+  padding: 0;
+  margin: 0;
+  background-color: white;
+}
+
