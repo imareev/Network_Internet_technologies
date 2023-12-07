@@ -1,0 +1,135 @@
+.back{
+    background-image: url("https://img.freepik.com/free-photo/abstract-background-light-gray-wallpaper-image_53876-108340.jpg?w=996&t=st=1699164291~exp=1699164891~hmac=816b4ea011a46be5639c1a92f72ded5ab7e9008019bda1424559ea622e8edbb8");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+body {
+    font-family: Arial;
+}
+.nav {
+    background-color: #555555;
+    height: 30px;
+    width: 100%;
+    display: inline-block;
+    text-align: right;
+}
+
+.nav input {
+    width: 60%;
+    height: 60%;
+    vertical-align: middle;
+}
+
+.nav img {
+    width:2%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+.menu {
+    display: inline-block;
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+}
+
+.menu-item {
+    width: 33%;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    padding: 0;
+}
+
+.topic {
+    display: flex; /* Use flex display for equal height columns */
+    height: 300px;
+}
+
+.item,
+.r-item {
+
+    padding: 1%;
+    margin: 1%;
+    border: thin solid black;
+    display: inline-block;
+}
+
+.item {
+    width: 65%;
+}
+
+.item>h6 {
+    margin: 0 2%;
+    text-align: center;
+}
+
+.item>p {
+    text-align: justify-all;
+}
+
+.r-item {
+    width: 30%;
+}
+
+.r-item>div {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.text,
+p,
+h6 {
+    word-wrap: break-word;
+    margin: 2%;
+    font-size: 100%;
+}
+
+img {
+    width: 100%;
+    height: 45%;
+}
+
+.r-item img {
+    width: 30%;
+}
+
+
+hr {
+    width: 100%;
+    height: 2px;
+    color: black;
+}
+
+footer > span {
+    float: right;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.end {
+    text-align: right;
+}
+.end  a{
+    background-color: #b3d4fc;
+    padding: 1%;
+    border-radius: 5px;
+
+}
+.gpeg{
+    z-index: -1;
+}

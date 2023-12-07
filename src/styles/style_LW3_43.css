@@ -1,11 +1,26 @@
-body {
+@font-face {
+  font-family: "Cruinn";
+  src: url("../Cruinn Light.ttf");
+}
+
+
+.back{
   background-image: url("https://img.freepik.com/free-photo/abstract-background-light-gray-wallpaper-image_53876-108340.jpg?w=996&t=st=1699164291~exp=1699164891~hmac=816b4ea011a46be5639c1a92f72ded5ab7e9008019bda1424559ea622e8edbb8");
-  font-family: Arial;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+
+}
+
+
+body {
+  background-color: #d7d4d4;
+  font-family: "Cruinn";
 }
 
 .nav {
   background-color: #555555;
-  height: 10%;
+  height: 15%;
 
 }
 
@@ -37,17 +52,21 @@ h1 {
 
 .menu-item {
   margin: auto;
+  grid-area: a;
 }
 
 .topic {
   display: flex;
-  height: 300px;
+  height: min-content;
 }
 
 .item, .r-item {
+  height: 25vh;
   padding: 1%;
   margin: 1%;
-  border: thin solid black;
+  border: 0px solid black;
+  border-radius: 20px;
+  background-color: #b2d2cf;
 
 }
 
@@ -66,10 +85,12 @@ h1 {
 
 
 .r-item {
+
   width: 30%;
 }
 
 .r-item > div {
+
   width: 100%;
   display: flex;
   align-items: flex-start;
@@ -112,5 +133,50 @@ a {
   background-color: #b3d4fc;
   padding: 1%;
   border-radius: 5px;
+
+}
+.gpeg{
+  z-index: -1;
+}
+
+@media (max-width: 600px) {
+  .back{
+    background-image: none;
+  }
+  .title{
+    display: none;
+  }
+  .topic{
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+  }
+  .item{
+    width: 100%;
+    float: right;
+    height: 100%;
+  }
+  .r-item{
+    width: 100%;
+  }
+
+  /*.menu{*/
+  /*  display: grid;*/
+  /*  width: 100%;*/
+  /*  height: 100%;*/
+  /*  grid-template-rows: repeat(2, 2fr);*/
+  /*  grid-template-columns:repeat(2, 1fr);*/
+  /*  grid-template-areas: "link1 link1"*/
+  /*                        "linl1 link1";*/
+  /*}*/
+  /*.menu-item{*/
+  /*  grid-area: link1;*/
+  /*  color: red;*/
+  /*}*/
+  .menu{
+    flex-wrap: wrap;
+  }
+
 
 }
